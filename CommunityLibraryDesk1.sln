@@ -19,4 +19,7 @@ Global
 		{3556865C-FB2F-4DFB-A4ED-B4524259F0A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3556865C-FB2F-4DFB-A4ED-B4524259F0A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 EndGlobal
