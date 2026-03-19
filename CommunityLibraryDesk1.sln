@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityLibraryDesk1", "CommunityLibraryDesk1\CommunityLibraryDesk1.csproj", "{F439AC15-0957-4881-8444-28B14108FE28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityLibraryDesk1.Tests1", "..\CommunityLibraryDesk1.Tests1\CommunityLibraryDesk1.Tests1\CommunityLibraryDesk1.Tests1.csproj", "{3556865C-FB2F-4DFB-A4ED-B4524259F0A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityLibraryDesk1.Tests", "..\CommunityLibraryDesk1.Tests1\CommunityLibraryDesk1.Tests\CommunityLibraryDesk1.Tests.csproj", "{3556865C-FB2F-4DFB-A4ED-B4524259F0A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
