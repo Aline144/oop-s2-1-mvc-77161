@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center mb-5">
+    <h1 class="display-4">Community Library Desk</h1>
+    <p>Library management system for books, members, loans, and roles.</p>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-3">
+        <div class="card shadow-sm h-100">
+            <div class="card-body text-center">
+                <h4 class="card-title">Books</h4>
+                <p class="card-text">Manage library books.</p>
+                <a asp-controller="Books" asp-action="Index" class="btn btn-primary">Go to Books</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm h-100">
+            <div class="card-body text-center">
+                <h4 class="card-title">Members</h4>
+                <p class="card-text">Manage library members.</p>
+                <a asp-controller="Members" asp-action="Index" class="btn btn-success">Go to Members</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm h-100">
+            <div class="card-body text-center">
+                <h4 class="card-title">Loans</h4>
+                <p class="card-text">Create and manage loans.</p>
+                <a asp-controller="Loans" asp-action="Index" class="btn btn-warning">Go to Loans</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm h-100">
+            <div class="card-body text-center">
+                <h4 class="card-title">Admin Roles</h4>
+                <p class="card-text">Manage system roles.</p>
+                <a asp-controller="Admin" asp-action="Roles" class="btn btn-danger">Go to Roles</a>
+            </div>
+        </div>
+    </div>
+</div>

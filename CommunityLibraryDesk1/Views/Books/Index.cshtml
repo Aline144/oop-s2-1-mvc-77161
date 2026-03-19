@@ -1,0 +1,102 @@
+@model CommunityLibraryDesk1.ViewModels.BookFilterViewModel
+
+@{
+    ViewData["Title"] = "Books";
+}
+
+<h1>Books</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Book</a>
+</p>
+
+<form method="get" class="row g-3 mb-3">
+    <div class="col-md-4">
+        <label class="form-label">Search</label>
+        <input type="text" name="searchTerm" value="@Model.SearchTerm" class="form-control" placeholder="Search by title or author" />
+    </div>
+
+    <div class="col-md-3">
+        <label class="form-label">Category</label>
+        <select name="category" class="form-select">
+            <option value="">All</option>
+            @foreach (var category in Model.Categories)
+            {
+                if (Model.Category == category)
+                {
+                    <option value="@category" selected>@category</option>
+                }
+                else
+                {
+                    <option value="@category">@category</option>
+                }
+            }
+        </select>
+    </div>
+
+    <div class="col-md-3">
+        <label class="form-label">Availability</label>
+        <select name="availability" class="form-select">
+            @if (string.IsNullOrEmpty(Model.Availability))
+            {
+                <option value="" selected>All</option>
+            }
+            else
+            {
+                <option value="">All</option>
+            }
+
+            @if (Model.Availability == "Available")
+            {
+                <option value="Available" selected>Available</option>
+            }
+            else
+            {
+                <option value="Available">Available</option>
+            }
+
+            @if (Model.Availability == "OnLoan")
+            {
+                <option value="OnLoan" selected>On loan</option>
+            }
+            else
+            {
+                <option value="OnLoan">On loan</option>
+            }
+        </select>
+    </div>
+
+    <div class="col-md-2 d-flex align-items-end">
+        <button type="submit" class="btn btn-success me-2">Filter</button>
+        <a asp-action="Index" class="btn btn-secondary">Clear</a>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>ISBN</th>
+        <th>Category</th>
+        <th>Availability</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Books)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Author</td>
+            <td>@item.Isbn</td>
+            <td>@item.Category</td>
+            <td>@(item.IsAvailable ? "Available" : "On loan")</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

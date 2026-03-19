@@ -1,0 +1,53 @@
+@model CommunityLibraryDesk1.Models.Book
+
+@{
+    ViewData["Title"] = "Create Book";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">Create Book</h1>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Author" class="form-label"></label>
+                    <input asp-for="Author" class="form-control" />
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Isbn" class="form-label"></label>
+                    <input asp-for="Isbn" class="form-control" />
+                    <span asp-validation-for="Isbn" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Category" class="form-label"></label>
+                    <input asp-for="Category" class="form-control" />
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input asp-for="IsAvailable" class="form-check-input" />
+                    <label asp-for="IsAvailable" class="form-check-label"></label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-action="Index" class="btn btn-secondary">Back</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
